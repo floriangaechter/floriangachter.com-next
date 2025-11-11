@@ -1,0 +1,62 @@
+{
+  "htmlElements": {
+    "tags": [
+      "a",
+      "body",
+      "div",
+      "h1",
+      "head",
+      "html",
+      "li",
+      "link",
+      "meta",
+      "nav",
+      "p",
+      "script",
+      "span",
+      "time",
+      "title",
+      "ul"
+    ],
+    "classes": [
+      "-ml-2",
+      "archive",
+      "archive__item",
+      "archive__link",
+      "archive__meta",
+      "bg-flexoki-paper",
+      "border-b",
+      "container",
+      "dark:bg-flexoki-black",
+      "dark:hover:bg-flexoki-base-850",
+      "dark:prose-invert",
+      "dark:selection:bg-flexoki-paper",
+      "dark:selection:text-flexoki-black",
+      "dark:text-flexoki-paper",
+      "flex",
+      "flex-none",
+      "hover:bg-flexoki-base-150",
+      "items-center",
+      "max-w-none",
+      "mb-6",
+      "ml-1",
+      "ml-auto",
+      "mt-2",
+      "mx-auto",
+      "opacity-50",
+      "p-1",
+      "prose",
+      "prose-flexoki",
+      "prose-sm",
+      "px-4",
+      "py-4",
+      "rounded",
+      "selection:bg-flexoki-black",
+      "selection:text-flexoki-paper",
+      "text-flexoki-black"
+    ],
+    "ids": [
+      "hello-im-flo"
+    ]
+  }
+}

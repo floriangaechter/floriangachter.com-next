@@ -8,14 +8,16 @@
       {{ if eq .IsHome true }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{
       .Site.Title }}{{ end }}
     </title>
-    {{- $global := resources.Get "css/global.css" }} {{- $styles := slice
-    $global | resources.Concat "css/styles.css" | resources.Minify }}
-    <style>
-      {{ $styles.Content | safeCSS }}
-    </style>
+    {{ with (templates.Defer (dict "key" "global")) }} {{ partial "css.html" .
+    }} {{ end }}
   </head>
-  <body>
-    {{ partial "header.html" . }} base.html {{ block "main" . }} {{ end }} {{
-    partial "footer.html" . }}
+
+  <body
+    class="bg-flexoki-paper dark:bg-flexoki-black text-flexoki-black dark:text-flexoki-paper selection:bg-flexoki-black selection:text-flexoki-paper dark:selection:bg-flexoki-paper dark:selection:text-flexoki-black"
+  >
+    <div class="container mx-auto px-4">
+      {{ partial "header.html" . }} base.html {{ block "main" . }} {{ end }} {{
+      partial "footer.html" . }}
+    </div>
   </body>
 </html>

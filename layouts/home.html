@@ -1,1 +1,14 @@
-{{ define "main" }} home.html {{ end }}
+{{ define "main" }}
+  {{ .Content }}
+
+  <ul class="archive">
+      {{ $posts := (where .Site.RegularPages "Section" "posts") }}
+
+      {{ range first 5 $posts }}
+      <li class="archive__item">
+        <a class="archive__link" href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
+        <p class="archive__meta">Published: <time datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "2006.01.02" .Date }}</time> · {{ .ReadingTime }} {{ if (eq .ReadingTime 1) }}minute{{ else }}minutes{{ end }} read</p>
+      </li>
+      {{ end }}
+    </ul>
+{{ end }}

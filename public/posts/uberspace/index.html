@@ -9,21 +9,30 @@ But beyond the geographical change, Uberspace offers me almost complete shell ac
     <title>
       Uberspace | floriangaechter.com
     </title>
-    <style>
-      :root{--flexoki-black:#100f0f;--flexoki-paper:#fffcf0}*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}body{background-color:var(--flexoki-paper);font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji}
-    </style>
+        
+<link rel="stylesheet" href="/css/main.css" />
+  
+ 
   </head>
-  <body>
-    <nav>
-  <ul>
-    <li>
-      <a href="/">Home</a>
+
+  <body
+    class="bg-flexoki-paper dark:bg-flexoki-black text-flexoki-black dark:text-flexoki-paper selection:bg-flexoki-black selection:text-flexoki-paper dark:selection:bg-flexoki-paper dark:selection:text-flexoki-black"
+  >
+    <div class="container mx-auto px-4">
+      <nav class="flex py-4 mt-2 border-b">
+  <ul class="flex items-center">
+    <li class="-ml-2">
+      <a
+        class="p-1 ml-1 rounded hover:bg-flexoki-base-150 dark:hover:bg-flexoki-base-850"
+        href="/"
+        >Home</a
+      >
     </li>
     <li>
       <a href="/about/">About</a>
     </li>
   </ul>
-  <ul>
+  <ul class="flex flex-none items-center ml-auto">
     <li>
       <a href="/rss.xml">RSS</a>
     </li>
@@ -39,10 +48,13 @@ But beyond the geographical change, Uberspace offers me almost complete shell ac
     <li>ThemeSwitcher</li>
   </ul>
 </nav>
- base.html  page.html  <div>
+ base.html  single.html  <div
+  class="prose prose-flexoki dark:prose-invert prose-sm opacity-50 max-w-none mb-6"
+>
   © 2025 Copyright Florian Gächter. All rights reserved. This
   site is hosted on <a href="https://uberspace.de/">Uberspace</a>.
 </div>
 
+    </div>
   </body>
 </html>

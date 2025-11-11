@@ -5,7 +5,25 @@
     <loc>http://localhost:1313/</loc>
     <lastmod>2025-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/uberspace/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/uberspace/</loc>
+    <lastmod>2025-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/totem-keyboard/</loc>
+    <lastmod>2024-02-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/nvim-and-tmux/</loc>
+    <lastmod>2024-01-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/valid-https-certificate-for-local-home-assistant-installation/</loc>
+    <lastmod>2020-07-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/motioneye-in-home-assistant/</loc>
+    <lastmod>2020-05-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/graphql-file-uploading/</loc>
+    <lastmod>2020-02-10T00:00:00+00:00</lastmod>
   </url>
 </urlset>
