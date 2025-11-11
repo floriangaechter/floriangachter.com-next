@@ -1,0 +1,24 @@
+:root {
+  --flexoki-black: #100f0f;
+  --flexoki-paper: #fffcf0;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--flexoki-paper);
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    sans-serif,
+    Apple Color Emoji,
+    Segoe UI Emoji,
+    Segoe UI Symbol,
+    Noto Color Emoji;
+}

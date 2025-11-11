@@ -1,0 +1,4 @@
+baseURL = 'https://floriangaechter.com/'
+languageCode = 'en-us'
+title = 'floriangaechter.com'
+disableKinds = ["taxonomy", "term"]

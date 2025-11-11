@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on floriangaechter.com</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on floriangaechter.com</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 21 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Uberspace</title>
+      <link>http://localhost:1313/uberspace/</link>
+      <pubDate>Fri, 21 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/uberspace/</guid>
+      <description>&lt;h1 id=&#34;uberspace&#34;&gt;Uberspace&lt;/h1&gt;&#xA;&lt;p&gt;I recently decided to move my blog from &lt;a href=&#34;https://www.netlify.com/&#34;&gt;Netlify&lt;/a&gt; to &lt;a href=&#34;https://uberspace.de&#34;&gt;Uberspace&lt;/a&gt;. It ultimately came down to data sovereignty. With what&amp;rsquo;s going on in the US, all the AI bullshit you have to deal with when using platforms like Netlify, it just didn&amp;rsquo;t sit right with me anymore.&lt;/p&gt;&#xA;&lt;p&gt;But beyond the geographical change, Uberspace offers me almost complete shell access and control over my hosting environment. Even though my blog is just a static site built with &lt;a href=&#34;https://astro.build/&#34;&gt;Astro&lt;/a&gt;, having this level of control means I can make adjustments whenever I need to.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

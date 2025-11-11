@@ -1,0 +1,21 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{{ .Summary }}" />
+    <title>
+      {{ if eq .IsHome true }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{
+      .Site.Title }}{{ end }}
+    </title>
+    {{- $global := resources.Get "css/global.css" }} {{- $styles := slice
+    $global | resources.Concat "css/styles.css" | resources.Minify }}
+    <style>
+      {{ $styles.Content | safeCSS }}
+    </style>
+  </head>
+  <body>
+    {{ partial "header.html" . }} base.html {{ block "main" . }} {{ end }} {{
+    partial "footer.html" . }}
+  </body>
+</html>
