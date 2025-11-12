@@ -3,6 +3,12 @@ languageCode = 'en-us'
 title = 'floriangaechter.com'
 disableKinds = ["taxonomy", "term"]
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[outputFormats.RSS]
+  baseName = "rss"
+
 [build]
 [build.buildStats]
 enable = true
@@ -20,3 +26,8 @@ target = 'assets'
 disableWatch = true
 source = 'hugo_stats.json'
 target = 'assets/notwatching/hugo_stats.json'
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    codeFences = true

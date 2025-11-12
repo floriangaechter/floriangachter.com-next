@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
   <head>
 	<meta name="generator" content="Hugo 0.152.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
@@ -5,11 +6,11 @@
     <link rel="icon" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Hello, I&rsquo;m Flo
-I&rsquo;m a Developer Advocate at Frontify, based in Switzerland. On this blog, I&rsquo;ll be
-sharing my journey, tips and tricks, and everything I&rsquo;ve learned about things
-I&rsquo;ve come across." />
+I&rsquo;m a Developer Advocate at Frontify, based in Switzerland. This is where I
+share things I&rsquo;ve learned or came across. Hopefully it&rsquo;s interesting and/or
+helps someone else." />
     <title>
-      floriangaechter.com
+       floriangaechter.com
     </title>
         
 <link rel="stylesheet" href="/css/main.css" />
@@ -21,100 +22,152 @@ I&rsquo;ve come across." />
     class="bg-flexoki-paper dark:bg-flexoki-black text-flexoki-black dark:text-flexoki-paper selection:bg-flexoki-black selection:text-flexoki-paper dark:selection:bg-flexoki-paper dark:selection:text-flexoki-black"
   >
     <div class="container mx-auto px-4">
-      <nav class="flex py-4 mt-2 border-b">
-  <ul class="flex items-center">
-    <li class="-ml-2">
+      <nav class="flex py-4 border-b">
+  <ul class="-ml-2 flex flex-wrap">
+    <li class="mt-2">
       <a
-        class="p-1 ml-1 rounded hover:bg-flexoki-base-150 dark:hover:bg-flexoki-base-850"
+        class="bg-flexoki-base-50 dark:bg-flexoki-base-800 p-1 ml-1 rounded hover:bg-flexoki-base-50 dark:hover:bg-flexoki-base-800"
         href="/"
         >Home</a
       >
     </li>
-    <li>
+    <li class="mt-2">
       <a
-        class="p-1 ml-1 rounded hover:bg-flexoki-base-150 dark:hover:bg-flexoki-base-850"
+        class="p-1 ml-1 rounded hover:bg-flexoki-base-50 dark:hover:bg-flexoki-base-800"
         href="/about/"
         >About</a
       >
     </li>
-  </ul>
-  <ul class="flex flex-none items-center ml-auto">
-    <li>
+    <li class="mt-2">
       <a
-        class="p-1 ml-1 rounded hover:bg-flexoki-base-150 dark:hover:bg-flexoki-base-850"
+        class="p-1 ml-1 rounded hover:bg-flexoki-base-50 dark:hover:bg-flexoki-base-800"
+        href="/uses/"
+        >Uses</a
+      >
+    </li>
+    <li class="mt-2">
+      <a
+        class="p-1 ml-1 rounded hover:bg-flexoki-base-50 dark:hover:bg-flexoki-base-800"
         href="/rss.xml"
         >RSS</a
       >
     </li>
-    <li>
+    <li class="mt-2">
       <a
-        class="p-1 ml-1 rounded hover:bg-flexoki-base-150 dark:hover:bg-flexoki-base-850"
+        class="p-1 ml-1 rounded hover:bg-flexoki-base-50 dark:hover:bg-flexoki-base-800"
         href="https://mastodon.social/@neither1nor0"
         >Mastodon</a
       >
     </li>
-    <li>
+    <li class="mt-2">
       <a
-        class="p-1 ml-1 rounded hover:bg-flexoki-base-150 dark:hover:bg-flexoki-base-850"
+        class="p-1 ml-1 rounded hover:bg-flexoki-base-50 dark:hover:bg-flexoki-base-800"
         href="https://github.com/floriangaechter/"
         >Github</a
       >
     </li>
-    <li>
-      <span
-        class="p-1 ml-1 rounded hover:bg-flexoki-base-150 dark:hover:bg-flexoki-base-850"
-        tabindex="0"
-        title="flo@<the domain name of this website>"
-        >@</span
+  </ul>
+  <ul class="flex flex-none ml-auto">
+    <li class="mt-2">
+      <button
+        id="theme-toggle"
+        type="button"
+        class="flex hover:bg-flexoki-base-50 dark:hover:bg-flexoki-base-800 rounded p-1 ml-4 cursor-pointer"
+        title="Theme"
+        transition:persist
       >
+        <svg
+          id="theme-toggle-dark-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-4 dark:hidden fill-current"
+        >
+          <title>Theme toggle dark</title>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+          ></path>
+        </svg>
+        <svg
+          id="theme-toggle-light-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-4 h-4 hidden dark:block fill-current"
+        >
+          <title>Theme toggle light</title>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+          ></path>
+        </svg>
+      </button>
     </li>
-    <li>ThemeSwitcher</li>
   </ul>
 </nav>
- base.html 
-  <h1 id="hello-im-flo">Hello, I&rsquo;m Flo</h1>
-<p>I&rsquo;m a Developer Advocate at Frontify, based in Switzerland. On this blog, I&rsquo;ll be
-sharing my journey, tips and tricks, and everything I&rsquo;ve learned about things
-I&rsquo;ve come across.</p>
 
+      <div class="my-12">
+  <div class="prose prose-flexoki dark:prose-invert prose-headings:text-xl prose-headings:font-medium prose-lead:text-base pb-16">
+    <h1 id="hello-im-flo">Hello, I&rsquo;m Flo</h1>
+<p>I&rsquo;m a Developer Advocate at Frontify, based in Switzerland. This is where I
+share things I&rsquo;ve learned or came across. Hopefully it&rsquo;s interesting and/or
+helps someone else.</p>
 
-  <ul class="archive">
-      
+  </div>
 
-      
-      <li class="archive__item">
-        <a class="archive__link" href="http://localhost:1313/posts/uberspace/" title="Uberspace">Uberspace</a>
-        <p class="archive__meta">Published: <time datetime="2025-03-21">2025.03.21</time> · 2 minutes read</p>
-      </li>
-      
-      <li class="archive__item">
-        <a class="archive__link" href="http://localhost:1313/posts/totem-keyboard/" title="A new keyboard – Meet the Totem">A new keyboard – Meet the Totem</a>
-        <p class="archive__meta">Published: <time datetime="2024-02-14">2024.02.14</time> · 2 minutes read</p>
-      </li>
-      
-      <li class="archive__item">
-        <a class="archive__link" href="http://localhost:1313/posts/nvim-and-tmux/" title="An attempt to use Neovim and tmux">An attempt to use Neovim and tmux</a>
-        <p class="archive__meta">Published: <time datetime="2024-01-04">2024.01.04</time> · 2 minutes read</p>
-      </li>
-      
-      <li class="archive__item">
-        <a class="archive__link" href="http://localhost:1313/posts/valid-https-certificate-for-local-home-assistant-installation/" title="Simple solution for a valid HTTPS certificate for Home Assistant">Simple solution for a valid HTTPS certificate for Home Assistant</a>
-        <p class="archive__meta">Published: <time datetime="2020-07-25">2020.07.25</time> · 3 minutes read</p>
-      </li>
-      
-      <li class="archive__item">
-        <a class="archive__link" href="http://localhost:1313/posts/motioneye-in-home-assistant/" title="Display a motionEye stream in Home Assistant (Lovelace)">Display a motionEye stream in Home Assistant (Lovelace)</a>
-        <p class="archive__meta">Published: <time datetime="2020-05-12">2020.05.12</time> · 2 minutes read</p>
-      </li>
-      
-    </ul>
- <div
-  class="prose prose-flexoki dark:prose-invert prose-sm opacity-50 max-w-none mb-6"
->
+  <ul class="divide-y divide-flexoki-base-100 dark:divide-flexoki-base-900 max-w-prose">
+    
+
+    
+    <li class="flex justify-between py-2">
+      <a class="pr-4" href="http://localhost:1313/posts/uberspace/" title="Uberspace">Uberspace</a>
+      <div class="text-right"><time class="text-flexoki-base-600 dark:text-flexoki-base-500" datetime="2025-03-21">Mar 21, 2025</time></div>
+    </li>
+    
+    <li class="flex justify-between py-2">
+      <a class="pr-4" href="http://localhost:1313/posts/totem-keyboard/" title="A new keyboard – Meet the Totem">A new keyboard – Meet the Totem</a>
+      <div class="text-right"><time class="text-flexoki-base-600 dark:text-flexoki-base-500" datetime="2024-02-14">Feb 14, 2024</time></div>
+    </li>
+    
+    <li class="flex justify-between py-2">
+      <a class="pr-4" href="http://localhost:1313/posts/nvim-and-tmux/" title="An attempt to use Neovim and tmux">An attempt to use Neovim and tmux</a>
+      <div class="text-right"><time class="text-flexoki-base-600 dark:text-flexoki-base-500" datetime="2024-01-04">Jan 4, 2024</time></div>
+    </li>
+    
+    <li class="flex justify-between py-2">
+      <a class="pr-4" href="http://localhost:1313/posts/valid-https-certificate-for-local-home-assistant-installation/" title="Simple solution for a valid HTTPS certificate for Home Assistant">Simple solution for a valid HTTPS certificate for Home Assistant</a>
+      <div class="text-right"><time class="text-flexoki-base-600 dark:text-flexoki-base-500" datetime="2020-07-25">Jul 25, 2020</time></div>
+    </li>
+    
+    <li class="flex justify-between py-2">
+      <a class="pr-4" href="http://localhost:1313/posts/motioneye-in-home-assistant/" title="Display a motionEye stream in Home Assistant (Lovelace)">Display a motionEye stream in Home Assistant (Lovelace)</a>
+      <div class="text-right"><time class="text-flexoki-base-600 dark:text-flexoki-base-500" datetime="2020-05-12">May 12, 2020</time></div>
+    </li>
+    
+    <li class="flex justify-between py-2">
+      <a class="pr-4" href="http://localhost:1313/posts/graphql-file-uploading/" title="GraphQL File Uploading (Without Apollo…)">GraphQL File Uploading (Without Apollo…)</a>
+      <div class="text-right"><time class="text-flexoki-base-600 dark:text-flexoki-base-500" datetime="2020-02-10">Feb 10, 2020</time></div>
+    </li>
+    
+  </ul>
+</div>
+      <div class="prose prose-flexoki dark:prose-invert prose-sm max-w-none mb-6">
   © 2025 Copyright Florian Gächter. All rights reserved. This
   site is hosted on <a href="https://uberspace.de/">Uberspace</a>.
 </div>
 
     </div>
+
+      
+<script src="/js/theme.js"></script>
+ 
+
   </body>
 </html>

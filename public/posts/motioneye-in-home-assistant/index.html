@@ -1,12 +1,20 @@
+<!doctype html>
 <html lang="en">
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Display a motionEye stream in Home Assistant (Lovelace)
-I&rsquo;m going to assume you already have a Home Assistant setup running and the motionEye server is working properly. For this example, we&rsquo;re going to use the mjpeg stream from motionEye.
+I&rsquo;m going to assume you already have a Home Assistant
+setup running and the motionEye
+server is working properly. For this example, we&rsquo;re going to use the mjpeg
+stream from motionEye.
 Get the stream URL
-The first thing we need to do is getting the URL we need for the integration. You&rsquo;ll find it in the &ldquo;Video Stream&rdquo; tab in the settings on your motionEye server. I&rsquo;m using the Fast Network Cam option, but you can use the normal mode as well. If you&rsquo;re using the normal mode, note down the Snapshot URL too, it can be used for the still_image_url property in the camera integration." />
+The first thing we need to do is getting the URL we need for the integration.
+You&rsquo;ll find it in the &ldquo;Video Stream&rdquo; tab in the settings on your motionEye
+server. I&rsquo;m using the Fast Network Cam option, but you can use the normal mode
+as well. If you&rsquo;re using the normal mode, note down the Snapshot URL too, it can
+be used for the still_image_url property in the camera integration." />
     <title>
       Display a motionEye stream in Home Assistant (Lovelace) | floriangaechter.com
     </title>
@@ -20,42 +28,180 @@ The first thing we need to do is getting the URL we need for the integration. Yo
     class="bg-flexoki-paper dark:bg-flexoki-black text-flexoki-black dark:text-flexoki-paper selection:bg-flexoki-black selection:text-flexoki-paper dark:selection:bg-flexoki-paper dark:selection:text-flexoki-black"
   >
     <div class="container mx-auto px-4">
-      <nav class="flex py-4 mt-2 border-b">
-  <ul class="flex items-center">
-    <li class="-ml-2">
+      <nav class="flex py-4 border-b">
+  <ul class="-ml-2 flex flex-wrap">
+    <li class="mt-2">
       <a
-        class="p-1 ml-1 rounded hover:bg-flexoki-base-150 dark:hover:bg-flexoki-base-850"
+        class="p-1 ml-1 rounded hover:bg-flexoki-base-50 dark:hover:bg-flexoki-base-800"
         href="/"
         >Home</a
       >
     </li>
-    <li>
-      <a href="/about/">About</a>
+    <li class="mt-2">
+      <a
+        class="p-1 ml-1 rounded hover:bg-flexoki-base-50 dark:hover:bg-flexoki-base-800"
+        href="/about/"
+        >About</a
+      >
+    </li>
+    <li class="mt-2">
+      <a
+        class="p-1 ml-1 rounded hover:bg-flexoki-base-50 dark:hover:bg-flexoki-base-800"
+        href="/uses/"
+        >Uses</a
+      >
+    </li>
+    <li class="mt-2">
+      <a
+        class="p-1 ml-1 rounded hover:bg-flexoki-base-50 dark:hover:bg-flexoki-base-800"
+        href="/rss.xml"
+        >RSS</a
+      >
+    </li>
+    <li class="mt-2">
+      <a
+        class="p-1 ml-1 rounded hover:bg-flexoki-base-50 dark:hover:bg-flexoki-base-800"
+        href="https://mastodon.social/@neither1nor0"
+        >Mastodon</a
+      >
+    </li>
+    <li class="mt-2">
+      <a
+        class="p-1 ml-1 rounded hover:bg-flexoki-base-50 dark:hover:bg-flexoki-base-800"
+        href="https://github.com/floriangaechter/"
+        >Github</a
+      >
     </li>
   </ul>
-  <ul class="flex flex-none items-center ml-auto">
-    <li>
-      <a href="/rss.xml">RSS</a>
+  <ul class="flex flex-none ml-auto">
+    <li class="mt-2">
+      <button
+        id="theme-toggle"
+        type="button"
+        class="flex hover:bg-flexoki-base-50 dark:hover:bg-flexoki-base-800 rounded p-1 ml-4 cursor-pointer"
+        title="Theme"
+        transition:persist
+      >
+        <svg
+          id="theme-toggle-dark-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="h-4 dark:hidden fill-current"
+        >
+          <title>Theme toggle dark</title>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+          ></path>
+        </svg>
+        <svg
+          id="theme-toggle-light-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-4 h-4 hidden dark:block fill-current"
+        >
+          <title>Theme toggle light</title>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+          ></path>
+        </svg>
+      </button>
     </li>
-    <li>
-      <a href="https://mastodon.social/@neither1nor0">Mastodon</a>
-    </li>
-    <li>
-      <a href="https://github.com/floriangaechter/">Github</a>
-    </li>
-    <li>
-      <span tabindex="0" title="flo@<the domain name of this website>">@</span>
-    </li>
-    <li>ThemeSwitcher</li>
   </ul>
 </nav>
- base.html  single.html  <div
-  class="prose prose-flexoki dark:prose-invert prose-sm opacity-50 max-w-none mb-6"
+
+      <div class="my-12">
+<div
+  class="prose prose-flexoki dark:prose-invert prose-headings:text-xl prose-headings:font-medium prose-lead:text-base"
 >
+  <h1 id="display-a-motioneye-stream-in-home-assistant-lovelace">Display a motionEye stream in Home Assistant (Lovelace)</h1>
+<p>I&rsquo;m going to assume you already have a <a href="https://www.home-assistant.io/">Home Assistant</a>
+setup running and the <a href="https://github.com/ccrisan/motioneye/wiki">motionEye</a>
+server is working properly. For this example, we&rsquo;re going to use the <em>mjpeg</em>
+stream from motionEye.</p>
+<h2 id="get-the-stream-url">Get the stream URL</h2>
+<p>The first thing we need to do is getting the URL we need for the integration.
+You&rsquo;ll find it in the &ldquo;Video Stream&rdquo; tab in the settings on your motionEye
+server. I&rsquo;m using the <em>Fast Network Cam</em> option, but you can use the normal mode
+as well. If you&rsquo;re using the normal mode, note down the Snapshot URL too, it can
+be used for the <code>still_image_url</code> property in the camera integration.</p>
+<p><picture><source srcset="http://localhost:1313/posts/motioneye-in-home-assistant/video-streaming-fast-network-cam.avif" type="image/avif" /><img
+      src="http://localhost:1313/posts/motioneye-in-home-assistant/video-streaming-fast-network-cam.png"
+      alt="Screenshot showing Fast Network Cam mode"
+      loading="lazy"
+      decoding="async"
+      width="972"
+      height="192"
+    /></picture>
+
+
+<em>Fast Network Cam Mode</em></p>
+<p><picture><source srcset="http://localhost:1313/posts/motioneye-in-home-assistant/video-streaming.avif" type="image/avif" /><img
+      src="http://localhost:1313/posts/motioneye-in-home-assistant/video-streaming.png"
+      alt="Screenshot showing normal mode"
+      loading="lazy"
+      decoding="async"
+      width="972"
+      height="365"
+    /></picture>
+
+
+<strong>Normal Mode</strong></p>
+<h2 id="home-assistant">Home Assistant</h2>
+<p>There are several different ways to display a camera stream in Lovelace. The
+method I went with is the <a href="https://www.home-assistant.io/lovelace/picture-entity/">Picture Entity Card</a>.
+To use a camera in Lovelace, we need to add the <a href="https://www.home-assistant.io/integrations/mjpeg/">camera</a>
+and <a href="https://www.home-assistant.io/integrations/stream/">stream</a> integrations:</p>
+<h3 id="configurationyaml">configuration.yaml</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">stream</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">camera</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l">mjpeg</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">My Fancy Camera</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">still_image_url</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;http://URLFROMMOTIONEYE/picture/1/current/&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">mjpeg_url</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;http://URLFROMMOTIONEYE:8081/mjpeg&#34;</span><span class="w">
+</span></span></span></code></pre></div><p>Make sure to check that the port matches the one you set in motionEye and to
+append <code>mjpeg</code> to actually get the MJPEG stream.</p>
+<p>Once the camera and the stream are set up properly, we need to add the picture
+entity card to Lovelace:</p>
+<h3 id="ui-lovelaceyaml">ui-lovelace.yaml</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">- <span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">picture-entity</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">entity</span><span class="p">:</span><span class="w"> </span><span class="l">camera.my_fancy_camera</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">camera_view</span><span class="p">:</span><span class="w"> </span><span class="l">live</span><span class="w">
+</span></span></span></code></pre></div><p>That&rsquo;s it. Restart Home Assistant and you should see the camera stream:</p>
+<p><picture><source srcset="http://localhost:1313/posts/motioneye-in-home-assistant/lovelace.avif" type="image/avif" /><img
+      src="http://localhost:1313/posts/motioneye-in-home-assistant/lovelace.png"
+      alt="Screenshot of the Lovelace dashboard showing the camera stream"
+      loading="lazy"
+      decoding="async"
+      width="1427"
+      height="1116"
+    /></picture>
+
+</p>
+<p>Sorry for the pinkish image; I&rsquo;m running the <a href="https://www.raspberrypi.org/products/pi-noir-camera-v2/">Pi NoIR Camera V2</a>
+without a filter.</p>
+
+</div>
+</div>
+      <div class="prose prose-flexoki dark:prose-invert prose-sm max-w-none mb-6">
   © 2025 Copyright Florian Gächter. All rights reserved. This
   site is hosted on <a href="https://uberspace.de/">Uberspace</a>.
 </div>
 
     </div>
+
+      
+<script src="/js/theme.js"></script>
+ 
+
   </body>
 </html>

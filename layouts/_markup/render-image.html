@@ -1,0 +1,24 @@
+<picture>
+  {{- $destination := .Destination -}}
+  {{- $extension := path.Ext $destination -}}
+  {{- $resources := .Page.Resources -}}
+
+  {{- $avifPath:= replace $destination $extension ".avif" -}}
+  {{- $altText := .Text -}}
+
+  {{- with $resources.GetMatch $avifPath -}}
+  <source srcset="{{- .Permalink -}}" type="image/avif" />
+  {{- end -}}
+
+  {{- with $resources.GetMatch $destination -}}
+    <img
+      src="{{- .Permalink -}}"
+      alt="{{- $altText -}}"
+      loading="lazy"
+      decoding="async"
+      {{ if ne .MediaType.SubType "svg" }}width="{{- .Width -}}"{{ end }}
+      {{ if ne .MediaType.SubType "svg" }}height="{{- .Height -}}"{{ end }}
+    />
+  {{- end -}}
+</picture>
+

@@ -50,5 +50,19 @@
       <guid>http://localhost:1313/posts/graphql-file-uploading/</guid>
       <description>&lt;h1 id=&#34;graphql-file-uploading-without-apollo&#34;&gt;GraphQL File Uploading (Without Apollo…)&lt;/h1&gt;&#xA;&lt;p&gt;This quick tutorial explains how to upload files with GraphQL using only plain JavaScript and no frameworks or libraries. It&amp;rsquo;s not meant as a complete tutorial as I won&amp;rsquo;t be covering the backend side of the implementation.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-specs&#34;&gt;The specs&lt;/h2&gt;&#xA;&lt;p&gt;A general specification for file uploads through GraphQL can be found &lt;a href=&#34;https://github.com/jaydenseric/graphql-multipart-request-spec&#34;&gt;on Github&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The idea is to send a &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/FormData&#34;&gt;multi-part form request&lt;/a&gt; to the server which enables you to easily upload multiple files in one request.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Home</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;h1 id=&#34;a-brief-introduction&#34;&gt;A brief introduction&lt;/h1&gt;&#xA;&lt;p&gt;My name is Florian Gächter and I&amp;rsquo;m the creator of this blog. I started this&#xA;blog to share things I&amp;rsquo;ve come across, that I think might help others.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve always been interested in technology and have been a developer for&#xA;around 17 years.&lt;/p&gt;&#xA;&lt;p&gt;In my free time, I enjoy the outdoors and spending time with my family. I&amp;rsquo;m&#xA;also really into home automation. Mainly because I&amp;rsquo;m lazy and hate manually&#xA;turning lights on and off…&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Uses</title>
+      <link>http://localhost:1313/uses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/uses/</guid>
+      <description>&lt;h1 id=&#34;uses&#34;&gt;Uses&lt;/h1&gt;&#xA;&lt;p&gt;This is the stuff I&amp;rsquo;m using.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

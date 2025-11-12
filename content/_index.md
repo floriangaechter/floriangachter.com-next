@@ -4,6 +4,6 @@ title: Home
 
 # Hello, I'm Flo
 
-I'm a Developer Advocate at Frontify, based in Switzerland. On this blog, I'll be
-sharing my journey, tips and tricks, and everything I've learned about things
-I've come across.
+I'm a Developer Advocate at Frontify, based in Switzerland. This is where I
+share things I've learned or came across. Hopefully it's interesting and/or
+helps someone else.

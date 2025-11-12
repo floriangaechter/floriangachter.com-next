@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @source "hugo_stats.json";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-flexoki-black: #100f0f;
@@ -174,4 +175,91 @@
   --color-flexoki-dark-bl-2: var(--color-flexoki-blue-600);
   --color-flexoki-dark-pu-2: var(--color-flexoki-purple-600);
   --color-flexoki-dark-ma-2: var(--color-flexoki-magenta-600);
+}
+
+@utility prose-flexoki {
+  --tw-prose-body: var(--color-flexoki-base);
+  --tw-prose-headings: var(--color-flexoki-base);
+  --tw-prose-lead: var(--color-flexoki-base);
+  --tw-prose-links: var(--color-flexoki-base);
+  --tw-prose-bold: var(--color-flexoki-base));
+  --tw-prose-counters: var(--color-flexoki-base);
+  --tw-prose-bullets: var(--color-flexoki-base);
+  --tw-prose-hr: var(--color-flexoki-base);
+  --tw-prose-quotes: var(--color-flexoki-base);
+  --tw-prose-quote-borders: var(--color-flexoki-base);
+  --tw-prose-captions: var(--color-flexoki-base);
+  --tw-prose-code: var(--color-flexoki-base);
+  --tw-prose-pre-code: var(--color-flexoki-base);
+  --tw-prose-pre-bg: var(--color-flexoki-base);
+  --tw-prose-th-borders: var(--color-flexoki-base);
+  --tw-prose-td-borders: var(--color-flexoki-base);
+  --tw-prose-invert-body: var(--color-flexoki-paper);
+  --tw-prose-invert-headings: var(--color-flexoki-paper);
+  --tw-prose-invert-lead: var(--color-flexoki-paper);
+  --tw-prose-invert-links: var(--color-flexoki-paper);
+  --tw-prose-invert-bold: var(--color-flexoki-paper);
+  --tw-prose-invert-counters: var(--color-flexoki-paper);
+  --tw-prose-invert-bullets: var(--color-flexoki-paper);
+  --tw-prose-invert-hr: var(--color-flexoki-paper);
+  --tw-prose-invert-quotes: var(--color-flexoki-paper);
+  --tw-prose-invert-quote-borders: var(--color-flexoki-paper);
+  --tw-prose-invert-captions: var(--color-flexoki-paper);
+  --tw-prose-invert-code: var(--color-flexoki-paper);
+  --tw-prose-invert-pre-code: var(--color-flexoki-paper);
+  --tw-prose-invert-pre-bg: var(--color-flexoki-paper);
+  --tw-prose-invert-th-borders: var(--color-flexoki-paper);
+  --tw-prose-invert-td-borders: var(--color-flexoki-paper);
+}
+
+/* Common styles for external link icon */
+a:not(:is([href*="floriangaechter.com"], [href*="localhost"], [href^="/"])) {
+  @apply text-nowrap;
+}
+
+a:not(
+    :is([href*="floriangaechter.com"], [href*="localhost"], [href^="/"])
+  )::after {
+  content: "";
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25' /%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  @apply bg-flexoki-black inline-block h-3 w-3 ml-1;
+}
+
+.dark a:not(:is([href*="floriangaechter.com"], [href*="localhost"], [href^="/"]))::after {
+  @apply bg-flexoki-paper;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+.chroma { background-color: var(--color-flexoki-base-50); }
+.chroma { color: #100F0F; }
+.chroma .c { color: #B7B5AC; }
+.chroma .k { color: #5E409D; }
+.chroma .kt { color: #24837B; }
+.chroma .s { color: #24837B; }
+.chroma .m { color: #5E409D; }
+.chroma .o { color: #AF3029; }
+.chroma .p { color: #A02F6F; }
+.chroma .nf { color: #AD8301; font-weight: 700; }
+.chroma .nc { color: #AD8301; }
+.chroma .nv { color: #24837B; }
+.chroma .no { color: #AD8301; }
+
+.dark {
+.chroma { background-color: var(--color-flexoki-base-950) }
+.chroma { color: #CECDC3; }
+.chroma .c { color: #575653; }
+.chroma .k { color: #8B7EC8; }
+.chroma .kt { color: #3AA99F; }
+.chroma .s { color: #3AA99F; }
+.chroma .m { color: #8B7EC8; }
+.chroma .o { color: #D14D41; }
+.chroma .p { color: #CE5D97; }
+.chroma .nf { color: #D0A215; font-weight: 700; }
+.chroma .nc { color: #D0A215; }
+.chroma .nv { color: #3AA99F; }
+.chroma .no { color: #D0A215; }
 }

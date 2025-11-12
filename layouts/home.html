@@ -1,14 +1,16 @@
 {{ define "main" }}
-  {{ .Content }}
+  <div class="prose prose-flexoki dark:prose-invert prose-headings:text-xl prose-headings:font-medium prose-lead:text-base pb-16">
+    {{ .Content }}
+  </div>
 
-  <ul class="archive">
-      {{ $posts := (where .Site.RegularPages "Section" "posts") }}
+  <ul class="divide-y divide-flexoki-base-100 dark:divide-flexoki-base-900 max-w-prose">
+    {{ $posts := (where .Site.RegularPages "Section" "posts") }}
 
-      {{ range first 5 $posts }}
-      <li class="archive__item">
-        <a class="archive__link" href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
-        <p class="archive__meta">Published: <time datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "2006.01.02" .Date }}</time> · {{ .ReadingTime }} {{ if (eq .ReadingTime 1) }}minute{{ else }}minutes{{ end }} read</p>
-      </li>
-      {{ end }}
-    </ul>
+    {{ range $posts }}
+    <li class="flex justify-between py-2">
+      <a class="pr-4" href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
+      <div class="text-right"><time class="text-flexoki-base-600 dark:text-flexoki-base-500" datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "Jan 2, 2006" .Date }}</time></div>
+    </li>
+    {{ end }}
+  </ul>
 {{ end }}
