@@ -4,10 +4,10 @@ title = 'floriangaechter.com'
 disableKinds = ["taxonomy", "term"]
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+home = ["HTML", "RSS"]
 
 [outputFormats.RSS]
-  baseName = "rss"
+baseName = "rss"
 
 [build]
 [build.buildStats]
@@ -28,6 +28,6 @@ source = 'hugo_stats.json'
 target = 'assets/notwatching/hugo_stats.json'
 
 [markup]
-  [markup.highlight]
-    noClasses = false
-    codeFences = true
+[markup.highlight]
+noClasses = false
+codeFences = true
