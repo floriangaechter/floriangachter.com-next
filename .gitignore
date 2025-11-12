@@ -1,3 +1,15 @@
-node_modules/
-.DS_Store
+# Hugo build artifacts
 public/
+resources/
+.hugo_build.lock
+hugo_stats.json
+
+# Node.js
+node_modules/
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
