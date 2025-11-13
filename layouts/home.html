@@ -1,16 +1,26 @@
 {{ define "main" }}
-  <div class="prose prose-flexoki dark:prose-invert prose-headings:text-xl prose-headings:font-medium prose-lead:text-base pb-16">
+  <div
+    class="prose prose-flexoki dark:prose-invert prose-headings:text-xl prose-headings:font-medium prose-lead:text-base pb-16">
     {{ .Content }}
   </div>
 
-  <ul class="divide-y divide-flexoki-base-100 dark:divide-flexoki-base-900 max-w-prose">
+  <ul
+    class="divide-y divide-flexoki-base-100 dark:divide-flexoki-base-900 max-w-prose">
     {{ $posts := (where .Site.RegularPages "Section" "posts") }}
 
     {{ range $posts }}
-    <li class="flex justify-between py-2">
-      <a class="pr-4" href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
-      <div class="text-right"><time class="text-flexoki-base-600 dark:text-flexoki-base-500" datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "Jan 2, 2006" .Date }}</time></div>
-    </li>
+      <li class="flex justify-between py-2">
+        <a class="pr-4" href="{{ .Permalink }}" title="{{ .Title }}"
+          >{{ .Title }}</a
+        >
+        <div class="text-right">
+          <time
+            class="text-flexoki-base-600 dark:text-flexoki-base-500"
+            datetime="{{ dateFormat "2006-01-02" .Date }}"
+            >{{ dateFormat "Jan 2, 2006" .Date }}</time
+          >
+        </div>
+      </li>
     {{ end }}
   </ul>
 {{ end }}

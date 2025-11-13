@@ -1,4 +1,4 @@
-{{ with resources.Get "js/theme.js" }}
+{{- with resources.Get "js/theme.js" -}}
   {{ if hugo.IsDevelopment }}
     <script src="{{ .RelPermalink }}"></script>
   {{ else }}
@@ -6,8 +6,7 @@
       <script
         src="{{ .RelPermalink }}"
         integrity="{{ .Data.Integrity }}"
-        crossorigin="anonymous"
-      ></script>
+        crossorigin="anonymous"></script>
     {{ end }}
   {{ end }}
-{{ end }}
+{{- end -}}

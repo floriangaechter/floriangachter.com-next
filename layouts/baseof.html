@@ -6,22 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="{{ .Summary }}" />
     <title>
-      {{ if eq .IsHome true }} {{ .Site.Title }}{{ else }}{{ .Title }} | {{
-      .Site.Title }}{{ end }}
+      {{- if eq .IsHome true -}}
+        {{ .Site.Title }}
+      {{- else -}}
+        {{ .Title }} |
+        {{ .Site.Title }}
+      {{- end -}}
     </title>
-    {{ with (templates.Defer (dict "key" "global")) }} {{ partial "css.html" .
-    }} {{ end }}
+    {{ with (templates.Defer (dict "key" "global")) }}
+      {{- partial "css.html" . -}}
+    {{ end }}
   </head>
 
   <body
-    class="bg-flexoki-paper dark:bg-flexoki-black text-flexoki-black dark:text-flexoki-paper selection:bg-flexoki-black selection:text-flexoki-paper dark:selection:bg-flexoki-paper dark:selection:text-flexoki-black"
-  >
+    class="bg-flexoki-paper dark:bg-flexoki-black text-flexoki-black dark:text-flexoki-paper selection:bg-flexoki-black selection:text-flexoki-paper dark:selection:bg-flexoki-paper dark:selection:text-flexoki-black">
     <div class="container mx-auto px-4">
       {{ partial "header.html" . }}
-      <div class="my-12">{{ block "main" . }} {{ end }}</div>
+      <div class="my-12">{{ block "main" . }}{{ end }}</div>
       {{ partial "footer.html" . }}
     </div>
 
-    {{ partial "js.html" }}
+    {{- partial "js.html" -}}
   </body>
 </html>

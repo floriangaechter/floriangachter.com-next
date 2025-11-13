@@ -7,7 +7,7 @@
   {{- $altText := .Text -}}
 
   {{- with $resources.GetMatch $avifPath -}}
-  <source srcset="{{- .Permalink -}}" type="image/avif" />
+    <source srcset="{{- .Permalink -}}" type="image/avif" />
   {{- end -}}
 
   {{- with $resources.GetMatch $destination -}}
@@ -17,8 +17,6 @@
       loading="lazy"
       decoding="async"
       {{ if ne .MediaType.SubType "svg" }}width="{{- .Width -}}"{{ end }}
-      {{ if ne .MediaType.SubType "svg" }}height="{{- .Height -}}"{{ end }}
-    />
+      {{ if ne .MediaType.SubType "svg" }}height="{{- .Height -}}"{{ end }} />
   {{- end -}}
 </picture>
-

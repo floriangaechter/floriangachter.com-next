@@ -1,11 +1,10 @@
-{{ with resources.Get "css/main.css" }}
+{{- with resources.Get "css/main.css" -}}
   {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
-  {{ with . | css.TailwindCSS $opts }}
-    {{ if hugo.IsDevelopment }}
+  {{- with . | css.TailwindCSS $opts -}}
+    {{- if hugo.IsDevelopment -}}
       <link rel="stylesheet" href="{{ .RelPermalink }}" />
-    {{ else }}
+    {{- else -}}
       <style>{{ .Content | safeCSS }}</style>
-    {{ end }}
-  {{ end }}
-{{ end }}
-
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
