@@ -249,17 +249,17 @@ a:not(
 .chroma .no { color: #AD8301; }
 
 .dark {
-.chroma { background-color: var(--color-flexoki-base-950) }
-.chroma { color: #CECDC3; }
-.chroma .c { color: #575653; }
-.chroma .k { color: #8B7EC8; }
-.chroma .kt { color: #3AA99F; }
-.chroma .s { color: #3AA99F; }
-.chroma .m { color: #8B7EC8; }
-.chroma .o { color: #D14D41; }
-.chroma .p { color: #CE5D97; }
-.chroma .nf { color: #D0A215; font-weight: 700; }
-.chroma .nc { color: #D0A215; }
-.chroma .nv { color: #3AA99F; }
-.chroma .no { color: #D0A215; }
+  .chroma { background-color: var(--color-flexoki-base-950) }
+  .chroma { color: #CECDC3; }
+  .chroma .c { color: #575653; }
+  .chroma .k { color: #8B7EC8; }
+  .chroma .kt { color: #3AA99F; }
+  .chroma .s { color: #3AA99F; }
+  .chroma .m { color: #8B7EC8; }
+  .chroma .o { color: #D14D41; }
+  .chroma .p { color: #CE5D97; }
+  .chroma .nf { color: #D0A215; font-weight: 700; }
+  .chroma .nc { color: #D0A215; }
+  .chroma .nv { color: #3AA99F; }
+  .chroma .no { color: #D0A215; }
 }
