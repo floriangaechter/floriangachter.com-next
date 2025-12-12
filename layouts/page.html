@@ -1,8 +1,7 @@
 {{ define "main" }}
+  <div class="text-sm text-flexoki-base-600 dark:text-flexoki-base-500 mb-2">Last updated: <time>{{ dateFormat "Jan 2, 2006" .Date }}</time></div>
   <div
     class="prose prose-flexoki dark:prose-invert prose-headings:text-xl prose-headings:font-medium prose-lead:text-base">
-    Last updated: <time>{{ dateFormat "Jan 2, 2006" .Date }}</time>
-
     {{ .Content }}
   </div>
 {{ end }}

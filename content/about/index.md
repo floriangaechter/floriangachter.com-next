@@ -1,5 +1,6 @@
 ---
-title: Home
+title: About
+pubDate: 2025-12-12
 ---
 
 # A brief introduction
@@ -20,4 +21,3 @@ worth your time. Thanks for reading!
 
 If you have any questions, don't hesitate to reach out to me through [Mastodon](https://mastodon.social/@neither1nor0).
 
-![Portrait of myself](me.jpg)
