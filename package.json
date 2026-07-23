@@ -1,21 +1,21 @@
 {
-  "name": "floriangaechter.com-next",
+  "name": "floriangaechter.com",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Personal blog of Florian Gächter",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "test": "npm run build && node --test"
   },
   "keywords": [],
-  "author": "",
+  "author": "Florian Gächter",
   "license": "ISC",
   "packageManager": "pnpm@10.17.1",
-  "dependencies": {
-    "tailwindcss": "^4.1.17"
-  },
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.17",
-    "@tailwindcss/typography": "^0.5.19",
-    "prettier-plugin-go-template": "^0.0.15"
+    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy-img": "^6.0.4",
+    "@11ty/eleventy-plugin-rss": "^3.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2"
   }
 }

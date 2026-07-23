@@ -1,0 +1,10 @@
+---
+layout: base.liquid
+---
+{% if date %}
+  <div class="mb-sm text-sm muted">
+    Last updated:
+    <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+  </div>
+{% endif %}
+<article class="prose">{{ content }}</article>

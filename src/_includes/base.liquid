@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="{% if description %}{{ description | escape }}{% else %}{{ content | excerpt | escape }}{% endif %}" />
+    <title>
+      {%- if page.url == "/" -%}
+        {{ site.title }}
+      {%- else -%}
+        {{ title }} | {{ site.title }}
+      {%- endif -%}
+    </title>
+    <script>
+      // Apply the theme before first paint to avoid a flash of the wrong one.
+      // Only an explicit choice is stored; otherwise follow the OS setting on
+      // every load.
+      (function () {
+        let stored;
+        try {
+          stored = localStorage.getItem("theme");
+        } catch (e) {}
+        if (
+          stored === "dark" ||
+          (!stored && matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest("#theme-toggle")) return;
+        const isDark = document.documentElement.classList.toggle("dark");
+        try {
+          localStorage.setItem("theme", isDark ? "dark" : "light");
+        } catch (e) {}
+      });
+    </script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="{{ site.title }}"
+      href="/rss.xml" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="container">
+      {% include "header.liquid" %}
+      <main id="main" tabindex="-1" class="my-xxl">{{ content }}</main>
+      {% include "footer.liquid" %}
+    </div>
+  </body>
+</html>

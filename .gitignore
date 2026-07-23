@@ -1,8 +1,5 @@
-# Hugo build artifacts
-public/
-resources/
-.hugo_build.lock
-hugo_stats.json
+# Eleventy build output
+_site/
 
 # Node.js
 node_modules/

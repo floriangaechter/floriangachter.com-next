@@ -1,0 +1,14 @@
+---
+layout: base.liquid
+---
+<div class="prose">{{ content }}</div>
+
+<ul class="divide-y list-none p-0 mt-xl max-w-prose">
+  {% assign posts = collections.posts | reverse %}
+  {% for post in posts %}
+    <li class="flex justify-between gap-md py-sm">
+      <a class="no-underline hover-underline" href="{{ post.url }}" title="{{ post.data.title }}">{{ post.data.title }}</a>
+      <time class="muted flex-none" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+    </li>
+  {% endfor %}
+</ul>
